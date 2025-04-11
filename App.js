@@ -1,12 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Button, StyleSheet } from 'react-native';
+import TrackPlayer from 'react-native-track-player';
 
 export default function App() {
+  useEffect(() => {
+    const setup = async () => {
+      await TrackPlayer.setupPlayer();
+      await TrackPlayer.add({
+        id: '1',
+        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+        title: 'Test Song',
+        artist: 'SoundHelix',
+      });
+    };
+    setup();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Button title="Play" onPress={() => TrackPlayer.play()} />
+      <Button title="Pause" onPress={() => TrackPlayer.pause()} />
     </View>
   );
 }
@@ -14,8 +27,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    padding: 40,
   },
 });

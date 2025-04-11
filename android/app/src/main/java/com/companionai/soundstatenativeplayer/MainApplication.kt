@@ -1,4 +1,4 @@
-package com.soundstatenativeplayer
+package com.companionai.soundstatenativeplayer
 
 import android.app.Application
 import android.content.res.Configuration

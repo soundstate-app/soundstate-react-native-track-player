@@ -1,7 +1,25 @@
 {
   "expo": {
-    "name": "soundstate-native-player",
+    "name": "SoundState",
     "slug": "soundstate-native-player",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "icon": "./assets/icons/icon.png",
+    "extra": {
+      "eas": {
+        "projectId": "63389b69-e079-4201-a4de-8f64ffb4862f"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.companionai.soundstatenativeplayer",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIBackgroundModes": ["audio"]
+      }
+    },
+    "android": {
+      "package": "com.companionai.soundstatenativeplayer",
+      "versionCode": 1
+    }
   }
 }
